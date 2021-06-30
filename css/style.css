@@ -207,6 +207,13 @@
     border-radius: 5px;
     padding: 10px;
     margin-bottom: 5px;
+    line-height: 5px;
+}
+
+.fumetto-verde-text div {
+    font-size: 10px;
+    color: rgb(177, 177, 177);
+    text-align: right;
 }
 
 /* footer contentparte uno */
