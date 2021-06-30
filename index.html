@@ -51,10 +51,10 @@
                             </div>
                             <div class="col-12 box-contacts">
                                 <div class="row">
-                                    <div class="col-2">
+                                    <div class="col-3">
                                         <img v-for="images in contacts" class="sidebar-phone-contacts-avatar" :src="images.avatar" alt="avatar">
                                     </div>
-                                    <div class="col-10">
+                                    <div class="col-9">
                                         <div v-for="element in contacts" class="sidebar-phone-contacts">{{element.name}}</div>
                                     </div>
                                     <div class="prova"></div>
@@ -81,10 +81,14 @@
                             <div class="col-12 content-inner">
                                 <div class="row">
                                     <div class="col-6">
-                                        <div class="fumetto-bianco"></div>
+                                        <div class="fumetto-bianco">
+                                            <div class="fumetto-bianco-text">Tutto fatto!</div>
+                                        </div>
                                     </div>
                                     <div class="col-6">
-                                        <div class="fumetto-verde"></div>
+                                        <div class="fumetto-verde">
+                                            <div class="fumetto-verde-text">Tutto fatto!</div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -92,7 +96,7 @@
                                 <div class="footer-content-smile">
                                     <i class="far fa-smile"></i>
                                 </div>
-                                <input type="text">
+                                <input placeholder="Scrivi un messaggio" type="text">
                                 <div class="footer-content-microphone">
                                     <i class="fas fa-microphone"></i>
                                 </div>
