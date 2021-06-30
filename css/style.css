@@ -1,0 +1,187 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* contenitore centrale */
+
+.second-box {
+    margin-top: 20px;
+}
+
+/* SIDEBAR */
+
+.sidebar {
+    border: 1px solid lightgray;
+}
+
+.navbar-sidebar {
+    height: 60px;
+    background-color: rgb(234, 234, 234);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* navbar sidebar utente prima parte */
+
+.navbar-sidebar img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.navbar-sidebar-utente {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-sidebar-utente-name {
+    padding-left: 5px;
+}
+
+.navbar-sidebar-icone {
+    color: rgb(177, 177, 177);
+    font-size: 18px;
+}
+
+.navbar-sidebar-icone i {
+    padding: 10px;
+}
+
+/* navbar sidebar notifiche parte due */
+
+.navbar-sidebar-notifiche {
+    height: 70px;
+    background-color: rgb(159, 216, 248);
+    display: flex;
+    align-items: center;
+}
+
+.notifiche-icona-campana {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.notifiche-icona-campana i {
+    color: rgb(159, 216, 248);
+    font-size: 18px;
+}
+
+.navbar-sidebar-notifiche-text {
+    margin-left: 10px;
+    line-height: 18px;
+}
+
+.navbar-sidebar-notifiche-text a {
+    font-size: 14px;
+    color: rgb(87, 115, 131);
+}
+
+/* navbar sidebar search bar parte tre */
+
+.navbar-sidebar-search-bar {
+    margin: 10px auto 10px;
+    padding: 10px;
+    border: 1px solid lightgray;
+}
+
+.navbar-sidebar-search-bar i {
+    color: rgb(183, 185, 187);
+}
+
+.navbar-sidebar-search-bar-input {
+    width: 100%;
+    border: none;
+    padding-left: 15px;
+}
+
+/* contatti parte quattro */
+
+.box-contacts {
+    height: 300px;
+    overflow-y: scroll;
+}
+
+.sidebar-phone-contacts-avatar {
+    width: 100%;
+    border-radius: 50%;
+}
+
+.sidebar-phone-contacts {
+    vertical-align: sub;
+}
+
+/* CONTENT */
+
+/* navbar content parte uno */
+
+.content {
+    border: 1px solid lightgray;
+}
+
+.navbar-content {
+    background-color: rgb(234, 234, 234);
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar-content-utente {
+    display: flex;
+    align-items: center;
+    line-height: 18px;
+}
+
+.navbar-content-utente img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.navbar-content-utente-name {
+    padding-left: 10px;
+}
+
+.navbar-content-utente-name-2text {
+    font-size: 12px;
+    color: rgb(108, 115, 118)
+}
+
+.navbar-content-icone {
+    color: rgb(177, 177, 177);
+    font-size: 18px;
+}
+
+.navbar-content-icone i {
+    padding: 10px;
+}
+
+/* navbar content-inner parte due */
+
+.content-inner {
+    background-image: url("../img/mine.jpg");
+    height: calc(500px - 60px);
+    overflow-y: scroll;
+}
+
+.prova {
+    width: 100px;
+    height: 200vh;
+    background-color: red;
+}
+
+.footer-content {
+    background-color: rgb(241, 237, 233);
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
