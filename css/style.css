@@ -120,12 +120,14 @@
 }
 
 .sidebar-phone-contacts-avatar {
-    width: 100%;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
 }
 
 .sidebar-phone-contacts {
-    vertical-align: sub;
+    height: 60px;
+    padding-top: 5px;
 }
 
 /* CONTENT */
