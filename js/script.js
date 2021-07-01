@@ -90,15 +90,32 @@ new Vue (
             ],
             indexAvatar: 0,
             newFooterMessages: "",
+            newTimer: null,
+            navbarSidebarSearch: "",
         },
         methods: {
             clickIndexAvatar: function (index) {
                 this.indexAvatar = index;
             },
             footerNewMessages: function () {
-                let newText = { text: this.newFooterMessages };
+                let newText = {
+                    text: this.newFooterMessages,
+                    status: "sent",
+                };
                 this.contacts[this.indexAvatar].messages.push(newText);
                 this.newFooterMessages = "";
+            },
+            timer: function () {
+                this.newTimer = setTimeout(() => {
+                    let answer = {
+                        text: "Ok",
+                    };
+                    this.contacts[this.indexAvatar].messages.push(answer);
+                }, 1000);
+            },
+            sidebarSearch: function () {
+                this.contacts.forEach((element) => {
+                });
             }
         }
     }

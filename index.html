@@ -45,7 +45,7 @@
                                         <i class="fas fa-search"></i>
                                     </div>
                                     <div class="col-11">
-                                        <input class="navbar-sidebar-search-bar-input" placeholder="Cerca o inizia una nuova chat" type="text">
+                                        <input v-model="navbarSidebarSearch" @keyup="sidebarSearch" class="navbar-sidebar-search-bar-input" placeholder="Cerca o inizia una nuova chat" type="text">
                                     </div>
                                 </div>
                             </div>
@@ -75,13 +75,15 @@
                             <div class="col-12 content-inner">
                                 <div class="row">
                                     <div class="col-6">
-                                        <div class="fumetto-bianco" v-for="messaggio in contacts[indexAvatar].messages">
+                                        <div class="fumetto-bianco" v-for="messaggio in contacts[indexAvatar].messages" :class="status">
                                             <p class="fumetto-bianco-text">{{messaggio.text}}</p>
+                                            <div class="fumetto-bianco-date">{{messaggio.date}}</div>
                                         </div>
                                     </div>
                                     <div class="col-6">
-                                        <div class="fumetto-verde">
-
+                                        <div class="fumetto-verde" v-for="messaggio in contacts[indexAvatar].messages">
+                                            <p class="fumetto-bianco-text">{{messaggio.text}}</p>
+                                            <div class="fumetto-bianco-date">{{messaggio.date}}</div>
                                         </div>
                                     </div>
                                 </div>

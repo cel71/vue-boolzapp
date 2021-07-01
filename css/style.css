@@ -199,16 +199,23 @@
 }
 
 .fumetto-bianco {
-    display:flex;
-    flex-direction: column;
-    align-items: center;
+    background-color: white;
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-left: 20px;
 }
 
 .fumetto-bianco-text {
-    background-color: white;
-    border-radius: 5px;
-    padding: 10px;
-    color: black;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+.fumetto-bianco-date {
+    text-align: end;
+    font-size: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    color: rgb(183, 185, 187);
 }
 
 .fumetto-verde {
