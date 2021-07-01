@@ -22,7 +22,7 @@
                             <div class="col-12 navbar-sidebar">
                                 <div class="navbar-sidebar-utente">
                                     <img src="./img/avatar_io.jpg" alt="avatar_io">
-                                    <div class="navbar-sidebar-utente-name">Nome Utente</div>
+                                    <div class="navbar-sidebar-utente-name">Lara</div>
                                 </div>
                                 <div class="navbar-sidebar-icone">
                                     <i class="fas fa-circle-notch"></i>
@@ -50,14 +50,9 @@
                                 </div>
                             </div>
                             <div class="col-12 box-contacts">
-                                <div class="row">
-                                    <div class="col-3">
-                                        <img v-for="images in contacts" class="sidebar-phone-contacts-avatar" :src="images.avatar" alt="avatar">
-                                    </div>
-                                    <div class="col-9">
-                                        <div v-for="element in contacts" class="sidebar-phone-contacts">{{element.name}}</div>
-                                    </div>
-                                </div>
+                                <ul class="box-contacts-ul">
+                                    <li v-for="(element, index) in contacts" @click="clickIndexAvatar(index)" :class="index === indexAvatar"><img class="sidebar-phone-contacts-avatar" :src="element.avatar" alt="avatar"> <span class="sidebar-phone-contacts">{{element.name}}</span></li>
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -65,10 +60,10 @@
                         <div class="row">
                             <div class="col-12 navbar-content">
                                 <div class="navbar-content-utente">
-                                    <img src="./img/avatar_1.jpg" alt="avatar_1">
+                                    <img :src="contacts[indexAvatar].avatar" alt="avatar">
                                     <div class="navbar-content-utente-name">
-                                        <div>Michele</div>
-                                        <div class="navbar-content-utente-name-2text">Ultimo accesso oggi alle</div>
+                                        <div>{{ contacts[indexAvatar].name }}</div>
+                                        <div class="navbar-content-utente-name-2text">Ultimo accesso oggi alle 18.00</div>
                                     </div>
                                 </div>
                                 <div class="navbar-content-icone">
@@ -80,17 +75,13 @@
                             <div class="col-12 content-inner">
                                 <div class="row">
                                     <div class="col-6">
-                                        <div class="fumetto-bianco">
-                                            <div class="fumetto-bianco-text">Tutto fatto!</div>
+                                        <div class="fumetto-bianco" v-for="messaggio in contacts[indexAvatar].messages">
+                                            <p class="fumetto-bianco-text">{{messaggio.text}}</p>
                                         </div>
                                     </div>
                                     <div class="col-6">
                                         <div class="fumetto-verde">
-                                            <div class="fumetto-verde-text">
-                                                <p>Hai portato a spasso il cane ?</p>
-                                                <div>10/01/2020 16:15:22</div>
-                                            </div>
-                                            <div class="fumetto-verde-text">Ricordati di dargli da mangiare</div>
+
                                         </div>
                                     </div>
                                 </div>
@@ -99,7 +90,7 @@
                                 <div class="footer-content-smile">
                                     <i class="far fa-smile"></i>
                                 </div>
-                                <input placeholder="Scrivi un messaggio" type="text">
+                                <input v-model="newFooterMessages" @keyup.enter="footerNewMessages" placeholder="Scrivi un messaggio" type="text">
                                 <div class="footer-content-microphone">
                                     <i class="fas fa-microphone"></i>
                                 </div>

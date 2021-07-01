@@ -72,7 +72,7 @@ new Vue (
                 },
                 {
                     name: 'Luisa',
-                    avatar: './img/avatar_4.jpg',
+                    avatar: './img/avatar_6.jpg',
                     visible: true,
                     messages: [
                         {
@@ -88,7 +88,18 @@ new Vue (
                     ],
                 },
             ],
-            // indexAvatar: 0,
+            indexAvatar: 0,
+            newFooterMessages: "",
+        },
+        methods: {
+            clickIndexAvatar: function (index) {
+                this.indexAvatar = index;
+            },
+            footerNewMessages: function () {
+                let newText = { text: this.newFooterMessages };
+                this.contacts[this.indexAvatar].messages.push(newText);
+                this.newFooterMessages = "";
+            }
         }
     }
 );
