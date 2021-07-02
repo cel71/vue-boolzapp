@@ -8,6 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 </head>
 <body>
@@ -45,13 +46,13 @@
                                         <i class="fas fa-search"></i>
                                     </div>
                                     <div class="col-11">
-                                        <input v-model="navbarSidebarSearch" @keyup="sidebarSearch" class="navbar-sidebar-search-bar-input" placeholder="Cerca o inizia una nuova chat" type="text">
+                                        <input v-model="navbarSidebarSearch" @keyup="sidebarSearch" class="navbar-sidebar-search-bar-input" placeholder="Cerca o inizia una nuova chat" type="text" name="sidebarSearch">
                                     </div>
                                 </div>
                             </div>
                             <div class="col-12 box-contacts">
                                 <ul class="box-contacts-ul">
-                                    <li v-for="(element, index) in contacts" @click="clickIndexAvatar(index)" :class="index === indexAvatar"><img class="sidebar-phone-contacts-avatar" :src="element.avatar" alt="avatar"> <span class="sidebar-phone-contacts">{{element.name}}</span></li>
+                                    <li v-for="(element, index) in contacts" @click="clickIndexAvatar(index)" class="element" v-if="element.visible" :class="index === indexAvatar"><img class="sidebar-phone-contacts-avatar" :src="element.avatar" alt="avatar"> <span class="sidebar-phone-contacts">{{element.name}}</span></li>
                                 </ul>
                             </div>
                         </div>
@@ -75,7 +76,7 @@
                             <div class="col-12 content-inner">
                                 <div class="row">
                                     <div class="col-6">
-                                        <div class="fumetto-bianco" v-for="messaggio in contacts[indexAvatar].messages" :class="status">
+                                        <div class="fumetto-bianco" v-for="messaggio in contacts[indexAvatar].messages">
                                             <p class="fumetto-bianco-text">{{messaggio.text}}</p>
                                             <div class="fumetto-bianco-date">{{messaggio.date}}</div>
                                         </div>

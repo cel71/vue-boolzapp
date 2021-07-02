@@ -90,7 +90,6 @@ new Vue (
             ],
             indexAvatar: 0,
             newFooterMessages: "",
-            newTimer: null,
             navbarSidebarSearch: "",
         },
         methods: {
@@ -99,24 +98,35 @@ new Vue (
             },
             footerNewMessages: function () {
                 let newText = {
+                    date: this.date(),
                     text: this.newFooterMessages,
                     status: "sent",
                 };
                 this.contacts[this.indexAvatar].messages.push(newText);
                 this.newFooterMessages = "";
-            },
-            timer: function () {
-                this.newTimer = setTimeout(() => {
-                    let answer = {
+                setTimeout(() => {
+                    this.contacts[this.indexAvatar].messages.push({
+                        date: this.date(),
                         text: "Ok",
-                    };
-                    this.contacts[this.indexAvatar].messages.push(answer);
-                }, 1000);
+                        status: "received",
+                    });
+                }, 1000)
+            },
+            date: function () {
+                const time = dayjs();
+                return time.format("DD/MM/YYYY HH:mm:ss");
             },
             sidebarSearch: function () {
                 this.contacts.forEach((element) => {
+                    let newName = element.name.toLowerCase();
+                    let search = this.navbarSidebarSearch.toLowerCase();
+                    if(newName.includes(search)) {
+                        element.visible = true;
+                    } else {
+                        element.visible = false;
+                    }
                 });
-            }
+            },
         }
     }
 );
