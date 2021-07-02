@@ -8,7 +8,7 @@
 
 .first-box {
     background: rgb(220,219,210);
-    background: linear-gradient(0deg, rgba(220,219,210,1) 85%, rgba(66,148,136,1) 85.2%);
+    background: linear-gradient(0deg, rgba(220,219,210,1) 85%, rgba(66,148,136,1) 85.1%);
     width: 100%;
     height: 100vh;
 }
@@ -198,45 +198,33 @@
     overflow-y: scroll;
 }
 
+.content-inner p {
+    padding-left: 15px;
+    padding-top: 15px;
+}
+
 .fumetto-bianco {
+    width: 400px;
     background-color: white;
-    border-radius: 5px;
-    margin-top: 20px;
-    margin-left: 20px;
-}
-
-.fumetto-bianco-text {
-    padding-left: 10px;
-    padding-top: 10px;
-}
-
-.fumetto-bianco-date {
-    text-align: end;
-    font-size: 10px;
-    padding-right: 10px;
-    padding-bottom: 10px;
-    color: rgb(183, 185, 187);
+    border-radius: 8px;
+    margin-top: 30px;
+    margin-left: 10px;
 }
 
 .fumetto-verde {
-    display:flex;
-    flex-direction: column;
-    align-items: center;
+    width: 400px;
+    background-color: rgb(220, 248, 192);
+    border-radius: 8px;
     margin-top: 30px;
+    margin-left: calc(100% - 410px);
 }
 
-.fumetto-verde-text {
-    background-color:rgb(220, 248, 192);
-    border-radius: 5px;
-    padding: 10px;
-    margin-bottom: 5px;
-    line-height: 5px;
-}
-
-.fumetto-verde-text div {
+.fumetto-date {
+    text-align: end;
     font-size: 10px;
-    color: rgb(177, 177, 177);
-    text-align: right;
+    padding-right: 12px;
+    padding-bottom: 12px;
+    color: rgb(183, 185, 187);
 }
 
 /* footer contentparte uno */

@@ -74,18 +74,10 @@
                                 </div>
                             </div>
                             <div class="col-12 content-inner">
-                                <div class="row">
-                                    <div class="col-6">
-                                        <div class="fumetto-bianco" v-for="messaggio in contacts[indexAvatar].messages">
-                                            <p class="fumetto-bianco-text">{{messaggio.text}}</p>
-                                            <div class="fumetto-bianco-date">{{messaggio.date}}</div>
-                                        </div>
-                                    </div>
-                                    <div class="col-6">
-                                        <div class="fumetto-verde" v-for="messaggio in contacts[indexAvatar].messages">
-                                            <p class="fumetto-bianco-text">{{messaggio.text}}</p>
-                                            <div class="fumetto-bianco-date">{{messaggio.date}}</div>
-                                        </div>
+                                <div>
+                                    <div v-for="messaggio in contacts[indexAvatar].messages" :class="(messaggio.status === 'sent')? messaggioInviato : messaggioRicevuto">
+                                        <p>{{messaggio.text}}</p>
+                                        <div class="fumetto-date">{{messaggio.date}}</div>
                                     </div>
                                 </div>
                             </div>

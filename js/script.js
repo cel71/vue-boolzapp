@@ -91,6 +91,8 @@ new Vue (
             indexAvatar: 0,
             newFooterMessages: "",
             navbarSidebarSearch: "",
+            messaggioInviato: "fumetto-verde",
+            messaggioRicevuto: "fumetto-bianco",
         },
         methods: {
             clickIndexAvatar: function (index) {
